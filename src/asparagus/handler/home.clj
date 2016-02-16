@@ -5,3 +5,5 @@
 (defn index [request]
   (response (render-file "home/index.html" {:message "Hello World"})))
 
+(defn test [request]
+  (response (render-file "home/test.html" {:message "test"})))
