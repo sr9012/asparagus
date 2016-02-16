@@ -7,7 +7,7 @@
 (defroutes routes
   [[["/" ^:interceptors [body-params html-body]
      {:get home/index}
-     ["/test" {:get home/test}]]]])
-
-
-
+     ["/test" {:get home/test}]
+     ["/json" {:get home/json}]
+     ["/user" {:get home/user}]
+     ["/user/:id" {:get home/user2}]]]])
