@@ -1,7 +1,6 @@
 # asparagus
 
 asparagus
-FIXME
 
 ## Run in development mode
 
