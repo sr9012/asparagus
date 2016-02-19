@@ -29,3 +29,6 @@
 
 (def user2
   (wrap-json-response (wrap-json-params user2)))
+
+(defn hello [request]
+  (response {:hello "world"}))
