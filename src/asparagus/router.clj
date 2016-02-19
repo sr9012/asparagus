@@ -12,4 +12,5 @@
      ["/user" {:get home/user}]
      ["/user/:id" {:get home/user2}]]
     ["/hello" ^:interceptors [json-body]
-     {:get home/hello}]]])
+     {:get home/hello
+      :post home/post}]]])

@@ -32,3 +32,6 @@
 
 (defn hello [request]
   (response {:hello "world"}))
+
+(defn post [request]
+  (response {:hello "world"}))
