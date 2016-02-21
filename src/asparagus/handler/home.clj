@@ -35,3 +35,9 @@
 
 (defn post [request]
   (response {:hello "world"}))
+
+(defn bot [request]
+  (let [url (get-in request [:params :url])
+        tag (get-in request [:params :tag])]
+    (response {:url url
+               :tag tag})))
