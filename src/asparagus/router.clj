@@ -5,14 +5,16 @@
               [asparagus.handler.home :as home]))
 
 (defroutes routes
-  [[["/" ^:interceptors [body-params html-body]
+  [[["/" ^:interceptors [(body-params) html-body]
      {:get home/index}
      ["/test" {:get home/test}]
      ["/json" {:get home/json}]
      ["/user" {:get home/user}]
-     ["/user/:id" {:get home/user2}]]
-    ["/hello" ^:interceptors [json-body]
-     {:get home/hello
-      :post home/post}]
-    ["/bot" ^:interceptors [json-body]
-     {:post home/bot}]]])
+     ["/user/:id" {:get home/user2}]
+     ["/userr/:id" {:get home/userr}]
+     ["/hello" ^:interceptors [json-body]
+      {:get  home/hello
+       :post home/hello2}]
+     ["/bot" ^:interceptors [json-body]
+      {:get home/bot}
+      ["/set" {:post home/set}]]]]])

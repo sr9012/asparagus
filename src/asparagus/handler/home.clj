@@ -31,13 +31,23 @@
   (wrap-json-response (wrap-json-params user2)))
 
 (defn hello [request]
-  (response {:hello "world"}))
+  (let [id (get-in request [:params :id])]
+    (response {:id id})))
 
-(defn post [request]
-  (response {:hello "world"}))
+(defn hello2 [request]
+  (let [id (get-in request [:path-params :id])]
+    (response {:id id})))
+
+(defn userr [request]
+  (let [id (get-in request [:path-params :id])]
+    (response {:id id})))
 
 (defn bot [request]
-  (let [url (get-in request [:params :url])
-        tag (get-in request [:params :tag])]
+  (response {:url :url :tag :tag}))
+
+(defn set [request]
+  (println ">>>>>>>>>>>" request)
+  (let [url (get-in request [:json-params :url])
+        tag (get-in request [:json-params :tag])]
     (response {:url url
                :tag tag})))
